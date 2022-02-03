@@ -1,0 +1,13 @@
+<% width = local_assigns[:width] || (((current - min) * 100) / (max - min)).to_i %>
+
+<div class="bg-white rounded-lg w-72 m-auto">
+	<div class="w-full h-4 bg-gray-400 rounded-full mt-3">
+		<div style="width:<%= width %>%;" class="h-full text-center text-xs text-white bg-blue-600 hover:bg-blue-800 rounded-full">
+			<span class="text-xs text-white-400"><%= money_fmt(current) %></span>
+		</div>
+	</div>
+	<div class="clearfix bg-stone-400">
+		<div class="text-xs text-red-400 float-left"><%= money_fmt(min) %></div>
+		<div class="text-xs text-green-400 float-right"><%= money_fmt(max) %></div>
+	</div>
+</div>
