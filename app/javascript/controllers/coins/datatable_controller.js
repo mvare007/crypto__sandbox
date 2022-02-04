@@ -1,8 +1,6 @@
 import SimpleDatatableController from "controllers/utils/simple_datatable_controller";
 
 export default class extends SimpleDatatableController {
-  static values = { refreshUrl: String };
-
   bindEvents() {
     this.reload();
   }
@@ -14,6 +12,6 @@ export default class extends SimpleDatatableController {
   }
 
   refreshData() {
-    fetch(this.refreshUrlValue);
+    fetch(this.urlValue + '?refresh=true');
   }
 }

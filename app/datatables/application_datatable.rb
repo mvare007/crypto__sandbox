@@ -5,6 +5,10 @@ class ApplicationDatatable
 
   def as_json(options = {})
     fetch_resource
-    return data unless options[:only_json]
+    if options[:refresh]
+      data_refresh
+    else
+      data
+    end
   end
 end
