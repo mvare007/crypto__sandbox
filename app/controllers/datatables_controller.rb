@@ -13,3 +13,4 @@ class DatatablesController < ApplicationController
 		end
 	end
 end
+

@@ -12,10 +12,13 @@ consumer.subscriptions.create("CoinsChannel", {
   received(data) {
     // Called when there's incoming data on the websocket for this channel
     Array.from(data).forEach(coin => {
-      const fields = Object.keys(coin).slice(1, coin.length);
-      fields.forEach(field => {
-        let fieldElement = document.getElementById(`${coin['id']}__${field}`);
-        fieldElement.innerHTML = coin[field];
+      let id = Object.keys(coin)[0];
+      let columns = coin[id];
+      Array.from(columns).forEach(column => {
+        let name = Object.keys(column)[0];
+        let value = column[name];
+        let currentColumn = document.getElementById(`${id}--${name}`);
+        currentColumn.outerHTML = value;
       })
     });
   }

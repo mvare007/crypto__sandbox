@@ -3,12 +3,11 @@ class ApplicationDatatable
     @view = view
   end
 
+  # Fetching the resource from the database and then returning the data.
   def as_json(options = {})
     fetch_resource
-    if options[:refresh]
-      data_refresh
-    else
-      data
-    end
+    refresh(options[:refresh])
+
+    data
   end
 end
