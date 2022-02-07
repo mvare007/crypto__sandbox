@@ -6,5 +6,3 @@ import "channels";
 import "simple-datatables";
 import "dayjs";
 import "dayjs/plugin/customParseFormat";
-import "fontawesome";
-import "process";
