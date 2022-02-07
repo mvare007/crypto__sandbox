@@ -11,5 +11,4 @@ pin_all_from "app/javascript/channels", under: "channels"
 pin "simple-datatables" # @3.2.0
 pin "dayjs" # @1.10.7
 pin "dayjs/plugin/customParseFormat", to: "dayjs--plugin--customParseFormat.js" # @1.10.7
-pin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @5.15.4
-pin "process" # @2.0.0
+pin 'fontawesome', to: '@fortawesome/fontawesome-free/js/all.js'
