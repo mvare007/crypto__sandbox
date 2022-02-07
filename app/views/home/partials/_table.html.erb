@@ -8,43 +8,41 @@
                 data-controller="coins--datatable"
                 data-coins--datatable-url-value="<%= datatables_coins_path %>"
                 data-utils--refresh-target="refreshable">
-          <thead class="bg-gray-50">
+          <thead class="bg-gray-800">
             <tr>
-              <th scope="col" class="px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-3 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 #
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th data-sortable="false" scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium tracking-wider">
                 Name
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Current Price
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Price Change 1H
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Price Change 24H
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Price Change 7D
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Market Cap
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th data-sortable="false" scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium tracking-wider">
                 24H Range
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Circulating Supply
               </th>
-              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-8 py-3 text-center text-gray-300 rounded-md text-sm font-medium hover:text-white tracking-wider cursor-pointer">
                 Total Supply
-              </th>
-              <th scope="col" class="relative px-6 py-3">
               </th>
             </tr>
           </thead>
-          <tbody class="bg-white divide-y divide-gray-200">
+          <tbody class="bg-gray-800 divide-y divide-gray-200 text-white">
           </tbody>
         </table>
       </div>

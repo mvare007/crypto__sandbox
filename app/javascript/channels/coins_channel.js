@@ -17,7 +17,9 @@ consumer.subscriptions.create("CoinsChannel", {
         let name = Object.keys(column)[0];
         let value = column[name];
         let currentColumn = document.getElementById(`${id}--${name}`);
-        currentColumn.outerHTML = value;
+        if (currentColumn) {
+          currentColumn.outerHTML = value;
+        }
       })
     });
   }

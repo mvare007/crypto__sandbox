@@ -1,5 +1,5 @@
 class CoinsDatatable < ApplicationDatatable
-	delegate :render, :tag, :money_fmt, :percentage_change_fmt, :supply_fmt, to: :@view
+	delegate :render, :tag, :money_fmt, :percentage_change_fmt, to: :@view
 
 	def data
     @resource.map do |coin|
@@ -24,15 +24,15 @@ class CoinsDatatable < ApplicationDatatable
 	end
 
 	def row_builder(coin)
-		columns(coin).map do |column|
-			column_identifier(id: coin['id'], column_name: column[:name]) do
-				column[:template]
+		columns(coin).map do |col|
+			column_identifier(id: coin['id'], column_name: col[:name]) do
+				col[:template]
 			end
 		end
 	end
 
 	def column_identifier(id:, column_name:, &block)
-    column = tag.div(id: "#{id}--#{column_name}", &block)
+    column = tag.div(id: "#{id}--#{column_name}", class: 'text-sm subpixel-antialiased', &block)
 		return column unless @refresh
 
 		{ "#{column_name}": column }
@@ -89,7 +89,7 @@ class CoinsDatatable < ApplicationDatatable
 			},
 			{
 				name: 'total_supply',
-				template: coin['total_supply'].to_f
+				template: money_fmt(coin['total_supply'].to_f)
 			}
 		]
 	end

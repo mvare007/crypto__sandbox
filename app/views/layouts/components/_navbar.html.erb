@@ -40,7 +40,7 @@
 					</div>
 					<div class="md:w-2/3">
 						<select id="vs-currency" class="cursor-pointer block appearance-none w-full bg-gray-200 border border-gray-200 text-center text-gray-700 py-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-							<%= options_for_select(VsCurrency.all) %>
+							<%= options_for_select(VsCurrency.all, selected: Current.vs_currency) %>
 						</select>
 					</div>
 				</div>
