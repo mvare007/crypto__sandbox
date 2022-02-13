@@ -40,7 +40,7 @@
               </label>
             </div>
             <div class="md:w-2/3">
-              <%= f.collection_select :vs_currency, VsCurrency.all, :symbol, :to_s, { selected: Current.vs_currency.symbol },
+              <%= f.collection_select :vs_currency, @vs_currencies_for_select, :symbol, :to_s, { selected: Current.vs_currency.symbol },
                   onchange: 'this.form.submit()',
                   id: "grid-state",
                   class: 'cursor-pointer block appearance-none w-full bg-gray-200 border border-gray-200 text-center text-gray-700 py-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500',
