@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/datatables/coins', to: 'datatables#coins'
   get '/datatables/exchanges', to: 'datatables#exchanges'
+  post '/vs_currencies/switch', to: 'vs_currencies#switch'
 end

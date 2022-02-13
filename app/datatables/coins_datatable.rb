@@ -32,7 +32,7 @@ class CoinsDatatable < ApplicationDatatable
 	end
 
 	def column_identifier(id:, column_name:, &block)
-    column = tag.div(id: "#{id}--#{column_name}", class: 'text-sm subpixel-antialiased', &block)
+    column = tag.div(id: "#{id}--#{column_name}", class: 'text-sm text-center', &block)
 		return column unless @refresh
 
 		{ "#{column_name}": column }

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 	private
 
 	def set_current_vs_currency
-		Current.vs_currency ||= VsCurrency.find_by(symbol: 'usd')
+		Current.vs_currency ||= VsCurrency.find_by(symbol: [cookies[:vs_currency] || 'usd'])
 	end
 end

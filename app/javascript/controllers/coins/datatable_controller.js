@@ -6,8 +6,10 @@ export default class extends SimpleDatatableController {
   }
 
   reload() {
-    this.element.addEventListener("ComponentRefresh", () => {
-      this.refreshData();
+    ["ComponentRefresh", "VsCurrencyChanged"].forEach(reloadEvent => {
+      this.element.addEventListener(reloadEvent, () => {
+        this.refreshData();
+      });
     });
   }
 
