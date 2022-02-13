@@ -14,6 +14,7 @@ export default class extends SimpleDatatableController {
   }
 
   refreshData() {
-    fetch(this.urlValue + '?refresh=true');
+    fetch(this.urlValue + '?refresh=true')
+      .then(window.dispatchEvent(new Event('DatatableRefreshed')));
   }
 }
