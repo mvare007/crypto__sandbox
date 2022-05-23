@@ -7,7 +7,7 @@ export default class extends Controller {
 
 	connect() {
 		this.onChangeVsCurrencySelect();
-		this.onDatatableRefreshed();
+		this.onDatatableRefresh();
 	}
 
 	onChangeVsCurrencySelect() {
@@ -18,8 +18,8 @@ export default class extends Controller {
 
 	}
 
-	onDatatableRefreshed() {
-		window.addEventListener('DatatableRefreshed', () => {
+	onDatatableRefresh() {
+		window.addEventListener('DatatableRefresh', () => {
 			this.vsCurrencySelectTarget.removeAttribute("disabled");
 		});
 	}
