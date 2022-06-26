@@ -3,9 +3,6 @@ class CoinGeckoApi::VsCurrencies
 	def self.fetch
 		client = CoingeckoRuby::Client.new
 		vs_currencies = client.supported_currencies
-		vs_currencies.each do |vs_currency|
-			currency = VsCurrency.find_or_initialize_by(symbol: vs_currency)
-			currency.save!
-		end
+		vs_currencies.each { |vs_currency| currency = VsCurrency.find_or_create_by(symbol: vs_currency) }
 	end
 end

@@ -32,13 +32,13 @@ class CoinsDatatable < ApplicationDatatable
 	end
 
 	def column_identifier(id:, column_name:, &block)
-    column = tag.div(id: "#{id}--#{column_name}", class: 'text-sm text-center', &block)
+    column = tag.div(id: "#{id}--#{column_name}", &block)
 		return column unless @refresh
 
 		{ "#{column_name}": column }
   end
 
-	# The above code is a Ruby method that takes a coin object as an argument and returns an array of
+	# Takes a coin object as an argument and returns an array of
 	# hashes. Each hash represents a column in the table. The hash has a name and a template. The
 	# template is a string that is rendered by the Rails view.
 	def columns(coin)

@@ -8,14 +8,12 @@ module ApplicationHelper
 	end
 
 	def money_fmt(amount)
-		Money.from_amount(amount, Current.vs_currency.symbol).format
+		Money.from_amount(amount, Current.vs_currency.symbol).round(3).format
 	end
 
 	def price_change_bar_width(current, min, max)
-		if current > max
-			100
-		else
-			(((current - min) * 100) / (max - min)).to_i rescue 0
-		end
+		return 100 if current > max
+
+		(((current - min) * 100) / (max - min)).to_i rescue 0
 	end
 end
