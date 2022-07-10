@@ -15,8 +15,7 @@ class CoinsDatatable < ApplicationDatatable
 	private
 
 	def fetch_resource
-		client = CoingeckoRuby::Client.new
-		@resource = client.markets(nil, vs_currency: Current.vs_currency.symbol, price_change_percentage: '1h,7d')
+		@resource = CoinGeckoApi::Coins.fetch
 	end
 
 	def refresh(option = false)
@@ -25,9 +24,7 @@ class CoinsDatatable < ApplicationDatatable
 
 	def row_builder(coin)
 		columns(coin).map do |col|
-			column_identifier(id: coin['id'], column_name: col[:name]) do
-				col[:template]
-			end
+			column_identifier(id: coin['id'], column_name: col[:name]) { col[:template] }
 		end
 	end
 
@@ -85,11 +82,11 @@ class CoinsDatatable < ApplicationDatatable
 			},
 			{
 				name: 'circulating_supply',
-				template: money_fmt(coin['circulating_supply'].to_f)
+				template: money_fmt(coin['circulating_supply'])
 			},
 			{
 				name: 'total_supply',
-				template: money_fmt(coin['total_supply'].to_f)
+				template: money_fmt(coin['total_supply'])
 			}
 		]
 	end

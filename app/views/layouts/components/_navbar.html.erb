@@ -22,12 +22,9 @@
 				-->
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <a href="<%= root_path %>" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+            <%= navlink_builder('Home', root_path) %>
+            <%= navlink_builder('Cryptocurrencies', coins_path) %>
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Exchanges</a>
-						<!--
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-						-->
           </div>
         </div>
       </div>

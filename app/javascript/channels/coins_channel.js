@@ -1,4 +1,4 @@
-import consumer from "channels/consumer"
+import consumer from "channels/consumer";
 
 consumer.subscriptions.create("CoinsChannel", {
   connected() {
@@ -11,10 +11,10 @@ consumer.subscriptions.create("CoinsChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    Array.from(data).forEach(coin => {
+    Array.from(data).forEach((coin) => {
       let id = Object.keys(coin)[0];
       let columns = coin[id];
-      Array.from(columns).forEach(column => {
+      columns.forEach((column) => {
         let name = Object.keys(column)[0];
         let value = column[name];
         let currentColumn = document.getElementById(`${id}--${name}`);
@@ -23,5 +23,5 @@ consumer.subscriptions.create("CoinsChannel", {
         }
       });
     });
-  }
+  },
 });

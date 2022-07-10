@@ -51,7 +51,7 @@ export default class extends Controller {
 		return {
 			placeholder: "Search...",
 			perPage: "{select} entries per page",
-			noRows: "No entries to found",
+			noRows: '<div class="flex items-center justify-center h-screen"><div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div></div>',
 			info: "Showing {start} to {end} of {rows} entries"
 		}
 	}
